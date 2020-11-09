@@ -7,9 +7,29 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
+  
+  </head>
   <body>
-    <%= yield %>
+    <header class="navbar navbar-fixed-top navbar-default">
+      <div class="container">
+        <%= link_to "工程管理", '#', id: "logo" %>
+        <nav>
+          <ul class= "nav navbar-nav navbar-right">
+            <li><%= link_to "ホーム",   '#' %></li>
+            <li><%= link_to "ヘルプ",   '#' %></li>
+            <li><%= link_to "ログイン", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class= "container">
+      <%= yield %>
+    </div>
   </body>
 </html>
