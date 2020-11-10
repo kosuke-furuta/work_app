@@ -1,0 +1,59 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* 全体的に */
+
+body {
+  padding-top: 80px;
+}
+
+  /* section 文書論理構造 単位 auto スクロールが出る */
+section {
+  overflow: auto;
+}
+
+  /* textarea 自由に大量に記述 */
+  /* resize 要素限定 寸法を上限に変更可能 vertical 垂直方向表示*/
+textarea {
+  resize: vertical;
+}
+
+  /* 文章を中央寄せ */
+.center {
+  text-align: center; 
+}
+
+.center h1 {
+　margin-bottom: 10px;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+  
+footer a:hover {
+  color: #222;
+}
+  
+footer small {
+  float: left;
+}
+  
+footer ul {
+  float: right;
+  list-style: none;
+}
+  
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
