@@ -10,7 +10,7 @@ require("channels")
 
 // 追加
 require('jquery')
-
+require('users/index')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
