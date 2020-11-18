@@ -1,19 +1,26 @@
 <% provide(:title, 'All users') %>
 <h1>全てのアイテム</h1>
 
-<h1 id="hello">Hello World</h1>
-
- <%= javascript_pack_tag 'users/index' %>
-  <ul class="tabnav">
-    <li><a href="#tab01">メニュー1</a></li>
-    <li><a href="#tab02">メニュー2</a></li>
-    <li><a href="#tab03">メニュー3</a></li>
-  </ul>
-  <div class="tabcontent">
-    <div id="tab01">タブ1の内容</div>
-    <div id="tab02">タブ2の内容<br>タブ2の内容</div>
-    <div id="tab03">タブ3の内容<br>タブ3の内容<br>タブ3の内容</div>
+<div class="tabmenu">
+  <div id="tab-menu-a">メニュー1</a></li>
+  <div id="tab-menu-b">メニュー2</a></li>
+  <div id="tab-menu-c">メニュー3</a></li>
+</div>
+<div class="tabcontent">
+  <div id="tab-a">
+    <p>タブ1の内容</p>
   </div>
+  <div id="tab-b">
+    <p>タブ2の内容</p>
+  </div>
+  <div id="tab-c">
+    <p>タブ3の内容</p>
+  </div>
+
+<button>show it</button>
+<p style="display: none">Hello</p>
+
+<script src="users.js"></script>
 
 <%= will_paginate %>
 
