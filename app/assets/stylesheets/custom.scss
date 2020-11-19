@@ -197,50 +197,95 @@ aside {
   }
 }
 
-.tabs-menu {
-  margin : 0;
-  padding :0;
-  list-style-type : none;
+.tab_wrap {
+  width: 800px;
+  margin: 80px auto;
 }
 
-.tabs-menu div {
-float: left;
-margin-right: 8px;
-margin-bottom: -1px;
-border-style: solid;
-border-width: 1px;
-border-color: transparent;
-border-radius: 4px 4px 0 0;
-
-  transition: all .15s;
-}
-.tabs-menu div {
-display: block;
-padding: 10px 20px;
-color: #557F95;
-text-decoration: none;
+input[type="radio"] {
+  display: none;
 }
 
-.tabs-menu div:not(.active):hover {
-border-color: #f0f0f0 #f0f0f0 #999;
-background-color: #f0f0f0;
+.tab_area {
+  font-size: 0px;
+  margin: 0px;
 }
 
-.tabs-menu .active {
-border-color: #999 #999 transparent #999;
-background-color: #fff;
-}
-.tabs-menu .active div {
-color: #3F4548;
+.tab_area label {
+  width: 150px;
+  margin: 0 50px;
+  display: inline-block;
+  padding: 14px 0 12px;
+  color: #999;
+  background: #ddd;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+  transition: ease 0.2s opacity;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  vertical-align: bottom;
+  transition: ease 0.2s;
+  margin: 20px 5px 0;
 }
 
-.tabs-content {
-clear: both;
-border: 1px solid #999;
-border-radius: 0 4px 4px 4px;
-padding: 10px;
+.tab_area label:hover {
+  opacity: 0.5;
 }
 
-.tabs-content div {
-display: none;
+.tab_panel {
+  width: 100%;
+  padding: 80px ;
+  opacity: 0;
+  display: none;
+}
+
+.tab_panel p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.panel_area {
+  background: #fff;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top: 8px solid #a6cadb;
+}
+
+#tab1:checked ~ .tab_area .tab1_label {
+  background: #fff;
+  color: #000;
+}
+
+#tab1:checked ~ .panel_area #panel1 {
+  display:block;
+}
+
+#tab2:checked ~ .tab_area .tab2_label {
+  background: #fff;
+  color: #000;
+}
+
+#tab2:checked ~ .panel_area #panel2 {
+  display: block;
+}
+
+#tab3:checked ~ .tab_area .tab3_label {
+  background: #fff;
+  color: #000;
+}
+
+#tab3:checked ~ .panel_area #panel3 {
+  display:block;
+}
+
+$i:1;
+$length:3;
+@while $i <= $length{
+	#tab#{$i}:checked{
+		~ .tabarea1 .tab#{$i}_label{background:#fff; color:#000;}
+		~ .panel_area #panel#{$i}{display:block;}
+	}
+	$i:$i + 1;
 }
