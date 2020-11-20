@@ -1,6 +1,16 @@
 <% provide(:title, 'All users') %>
 <h1>全てのアイテム</h1>
 
+<nav>
+  <ul>
+    <li><%= link_to "print", print_path %></li>
+    <li><%= link_to "drylaminate", drylaminate_path %></li>
+    <li><%= link_to "exlaminate", exlaminate_path %></li>
+    <li><%= link_to "slit", slit_path %></li>
+    <li><%= link_to "bagmake", bagmake_path %></li>
+  </ul>
+</nav>
+
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
