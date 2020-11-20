@@ -1,30 +1,21 @@
 <% provide(:title, 'All users') %>
 <h1>全てのアイテム</h1>
 
-<div class="tab_wrap">
-  <input id="tab1" type="radio" name="tab_btn checked">
-  <input id="tab2" type="radio" name="tab_btn">
-  <input id="tab3" type="radio" name="tab_btn">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
 
-  <div class="tab_area">
-    <label class="tab1_label" for="tab1">tab1</label>>
-    <label class="tab2_label" for="tab1">tab2</label>>
-    <label class="tab3_label" for="tab1">tab3</label>>
-  </div>
-  <div class="panel_area">
-    <div id="panel1" class="tab_panel">
-      <p>panel1</p>
-    </div>
-    <div class="panel_area">
-      <div id="panel2" class="tab_panel">
-        <p>panel2</p>
-    </div>
-    <div class="panel_area">
-      <div id="panel3" class="tab_panel">
-        <p>panel3</p>
-    </div>
-  </div>
-</div>
 
 <%= will_paginate %>
 

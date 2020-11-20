@@ -197,17 +197,8 @@ aside {
   }
 }
 
-.tab_wrap {
-  width: 800px;
-  margin: 80px auto;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
 .tab_area {
-  font-size: 0px;
+  font-size: 20px;
   margin: 0px;
 }
 
@@ -278,14 +269,4 @@ input[type="radio"] {
 
 #tab3:checked ~ .panel_area #panel3 {
   display:block;
-}
-
-$i:1;
-$length:3;
-@while $i <= $length{
-	#tab#{$i}:checked{
-		~ .tabarea1 .tab#{$i}_label{background:#fff; color:#000;}
-		~ .panel_area #panel#{$i}{display:block;}
-	}
-	$i:$i + 1;
 }
