@@ -1,0 +1,23 @@
+<%= form_for(@item) do |f| %>
+  <%= render 'items_text/error_messages_items', object: @item %>
+
+  <%= f.label :productname, "製品名" %>
+  <%= f.text_field :productname, class: 'form-control' %>
+
+  <%= f.label :sales, "担当営業" %>
+  <%= f.text_field :sales, class: 'form-control' %>
+
+  <%= f.label :productdate, "製造日" %>
+  <%= f.text_field :productdate, class: 'form-control' %>
+
+  <%= f.label :quantity, "手配数量" %>
+  <%= f.text_field :quantity, class: 'form-control' %>
+
+  <%= f.label :daliverydate, "納期" %>
+  <%= f.text_field :daliverydate, class: 'form-control' %>
+
+
+  <!-- 前回納期、注番、工程ドロップダウン、納品方法、備考、-->
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
