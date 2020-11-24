@@ -1,23 +1,35 @@
-<%= form_for(@item) do |f| %>
+<%= form_with(model: @item, local: true) do |f| %>
   <%= render 'items_text/error_messages_items', object: @item %>
 
   <%= f.label :productname, "製品名" %>
   <%= f.text_field :productname, class: 'form-control' %>
 
-  <%= f.label :sales, "担当営業" %>
-  <%= f.text_field :sales, class: 'form-control' %>
+  <%= f.label :order_number, "注番" %>
+  <%= f.text_field :order_number, class: 'form-control' %>
 
-  <%= f.label :productdate, "製造日" %>
-  <%= f.text_field :productdate, class: 'form-control' %>
+  <%= f.label :product_date, "製造日" %>
+  <%= f.text_field :product_date, class: 'form-control' %>
+
+  <%= f.label :delivery_date, "納期" %>
+  <%= f.text_field :dalivery_date, class: 'form-control' %>
+
+  <%= f.label :dalivery_method, "納品方法" %>
+  <%= f.text_field :dalivery_method, class: 'form-control' %>
 
   <%= f.label :quantity, "手配数量" %>
   <%= f.text_field :quantity, class: 'form-control' %>
 
-  <%= f.label :daliverydate, "納期" %>
-  <%= f.text_field :daliverydate, class: 'form-control' %>
+  <%= f.label :sales, "担当営業" %>
+  <%= f.text_field :sales, class: 'form-control' %>
 
+  <%= f.label :number_of_process, "工程数" %>
+  <%= f.text_field :number_of_process, class: 'form-control' %>
 
-  <!-- 前回納期、注番、工程ドロップダウン、納品方法、備考、-->
+  <%= f.label :process, "工程" %>
+  <%= f.text_field :process, class: 'form-control' %>
+
+  <%= f.label :remarks, "備考" %>
+  <%= f.text_field :remarks, class: 'form-control' %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
