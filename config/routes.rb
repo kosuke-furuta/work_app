@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :users
 
   # ここからアイテム
-  get '/new', to: 'items#new'
   resources :items
 
   get 'print', to: 'work_process#print'

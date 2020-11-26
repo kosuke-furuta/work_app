@@ -1,0 +1,11 @@
+<% provide(:title, 'All items') %>
+<h1>全ての製品</h1>
+
+<%= will_paginate %>
+
+<ul class="items">
+  <% @items.each do |item| %>
+    <%= render @items %>
+  <% end %>
+</ul>
+<%= will_paginate %>

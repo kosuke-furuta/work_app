@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  
-  def show
+
+  def show 
     @item = Item.find(params[:id])
   end
   
@@ -19,6 +19,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def index
+    @items = Item.paginate(page: params[:page])
+  end
+  
   def edit
     @item = Item.find(params[:id])
   end
@@ -32,6 +36,12 @@ class ItemsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    Item.find(params[:id]).destroy
+    flash[:success] = "製品削除完了！"
+    redirect_to items_url
   end
 
   private
