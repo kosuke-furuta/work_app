@@ -14,8 +14,9 @@
           <th><%= @item.remarks %></th>
           <th><%= @item.created_at %>
           <td><%= @item.updated_at %>
+          <%= link_to "編集", edit_item_path, class: "btn btn-primary" %>
           <%= link_to "削除", @item, method: :delete,
-                            data: { confirm: "製品「#{@item}」を削除します。よろしいですか？" },
+                            data: { confirm: "「#{@item.productname}」を削除します。よろしいですか？" },
                             class: 'btn btn-danger' %>
         </tr>    
       </tbody>

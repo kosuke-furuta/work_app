@@ -25,19 +25,15 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    if @item.update(item_params)
-      # 更新に成功した場合を扱う
-      flash[:success] = "製品編集完了！"
-      redirect_to @item
-    else
-      render 'edit'
-    end
+    @item.update!(item_params)
+    flash[:success] = "「#{@item.productname}」を編集しました。"
+    redirect_to items_url
   end
 
   def destroy
     @item = Item.find(params[:id])
-    item.destroy
-    flash[:success] = "製品削除完了！"
+    @item.destroy
+    flash[:success] = "「#{@item.productname}」を削除しました。"
     redirect_to items_url
   end
 
