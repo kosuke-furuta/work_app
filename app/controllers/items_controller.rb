@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  def show 
+  def show
     @item = Item.find(params[:id])
   end
   
@@ -10,13 +10,9 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
-      flash[:success] = "製品登録完了！"
-      # 保存をここで扱う
-      redirect_to @item
-    else
-      render 'new'
-    end
+    @item.save!
+    flash[:success] = "「#{@item.productname}」を登録しました。"
+    redirect_to items_url
   end
 
   def index
@@ -39,7 +35,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    Item.find(params[:id]).destroy
+    @item = Item.find(params[:id])
+    item.destroy
     flash[:success] = "製品削除完了！"
     redirect_to items_url
   end
@@ -49,8 +46,7 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:productname, :order_number,
                                    :product_date, :delivery_date,
-                                   :delivery_number, :delivery_method,
-                                   :quantity, :sales, :number_of_process,
+                                   :delivery_number, :quantity,
                                    :process, :remarks)
     end
 end

@@ -1,10 +1,42 @@
 <% provide(:title, @item.productname) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @item.productname %>
-      </h1>
-  </section>
-  </aside>
-</div>
+<nav class="row justify-content-end">
+  <div class="col-md-4">
+    <table class= "table table table-hover">
+      <tbody>
+        <tr>
+          <th><%= @item.productname %></th>
+          <td><%= @item.productname %></td>
+          <th><%= @item.order_number %></th>
+          <th><%= @item.product_date %></th>
+          <th><%= @item.delivery_date %></th>
+          <th><%= @item.quantity %></th>
+          <th><%= @item.process %></th>
+          <th><%= @item.remarks %></th>
+          <th><%= @item.created_at %>
+          <td><%= @item.updated_at %>
+          <%= link_to "削除", @item, method: :delete,
+                            data: { confirm: "製品「#{@item}」を削除します。よろしいですか？" },
+                            class: 'btn btn-danger' %>
+        </tr>    
+      </tbody>
+    </table>
+  </div>
+</nav>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <li><%= link_to "印刷", print_path %></li>
+  </li>
+  <li class="nav-item">
+    <li><%= link_to "ドライラミネート", drylaminate_path %></li>
+  </li>
+  <li class="nav-item">
+    <li><%= link_to "押出しラミネート", exlaminate_path %></li>
+  </li>
+  <li class="nav-item">
+    <li><%= link_to "スリット", slit_path %></li>
+  </li>
+  <li class="nav-item">
+    <li><%= link_to "製袋", bagmake_path %></li>
+  </li>
+</ul>

@@ -6,6 +6,8 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-  </section>
+    </section>
   </aside>
+  <%= link_to "新規登録", new_item_path, class: "btn btn-primary" %>
+  <%= link_to "製品一覧", item_path, class: "btn btn-primary" %>
 </div>

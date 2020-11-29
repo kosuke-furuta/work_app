@@ -4,8 +4,27 @@
 <%= will_paginate %>
 
 <ul class="items">
-  <% @items.each do |item| %>
-    <%= render @items %>
-  <% end %>
+  <%= render @items %>
 </ul>
+
 <%= will_paginate %>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <li><%= link_to "印刷", print_path %></li>
+  </li>
+  <li class="nav-item">
+    <li><%= link_to "ドライラミネート", drylaminate_path %></li>
+  </li>
+  <li class="nav-item">
+    <li><%= link_to "押出しラミネート", exlaminate_path %></li>
+  </li>
+  <li class="nav-item">
+    <li><%= link_to "スリット", slit_path %></li>
+  </li>
+  <li class="nav-item">
+    <li><%= link_to "製袋", bagmake_path %></li>
+  </li>
+</ul>
+
+<%= link_to "新規登録", new_item_path, class: "btn btn-primary" %>

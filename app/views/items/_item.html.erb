@@ -1,7 +1,28 @@
 </li>
-  <%= gravatar_for user, size: 50 %>
-  <%= link_to user.name, user %>
-  <%= link_to "delete", item, method: :delete,
-                                  data: { confirm: "削除してよろしいですか？" } %>
-  <% end %>
+  <table class= "table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">製造名</th>
+        <th scope="col">注番</th>
+        <th scope="col">製造日</th>
+        <th scope="col">納期</th>
+        <th scope="col">手配数量</th>
+        <th scope="col">工程</th>
+        <th scope="col">備考</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td><%= link_to item.productname, item %></td>
+        <td><%= link_to item.order_number, item %></td>
+        <td><%= link_to item.product_date, item %></td>
+        <td><%= link_to item.delivery_date, item %></td>
+        <td><%= link_to item.quantity, item %></td>
+        <td><%= link_to item.process, item %></td>
+        <td><%= link_to item.remarks, item %></td>
+      </tr>
+    </tbody>
+  </table>
 </li>
