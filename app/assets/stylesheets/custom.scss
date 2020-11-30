@@ -24,7 +24,7 @@ $gray-medium-light: #eaeaea;
 /* 全体的に */
 
 body {
-  padding-top: 80px;
+  padding-top: 100px;
 }
 
   /* section 文書論理構造 単位 auto スクロールが出る */
@@ -35,7 +35,7 @@ section {
   /* textarea 自由に大量に記述 */
   /* resize 要素限定 寸法を上限に変更可能 vertical 垂直方向表示*/
 textarea {
-  resize: vertical;
+  resize: horizontal;
 }
 
   /* 文章を中央寄せ */
@@ -55,7 +55,7 @@ margin-bottom: 10px;
   font-size: 1.7em;
   color: white;
   text-transform: uppercase;
-  letter-spacing: -1px;
+  letter-spacing: 1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
@@ -183,6 +183,16 @@ aside {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+input[type="email"] {
+  width: 300px;
+  margin: auto;
+}
+
+input[type="password"] {
+  width: 300px;
+  margin: auto;
 }
 
 /* Users index */
