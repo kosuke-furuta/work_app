@@ -3,8 +3,6 @@
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eaeaea;
-
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -21,169 +19,41 @@ $gray-medium-light: #eaeaea;
   @include box_sizing;
 }
 
-/* 全体的に */
+/* home.html.erb */
 
-body {
-  padding-top: 100px;
+h2 {
+  font-size: 4em;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 2em;
 }
 
-  /* section 文書論理構造 単位 auto スクロールが出る */
-section {
-  overflow: auto;
+p{
+  font-size: 1em;
+  text-align: center;
+  line-height: 2em;
+  font-weight: normal;
 }
 
-  /* textarea 自由に大量に記述 */
-  /* resize 要素限定 寸法を上限に変更可能 vertical 垂直方向表示*/
-textarea {
-  resize: horizontal;
-}
-
-  /* 文章を中央寄せ */
-.center {
-  text-align: center; 
-}
-
-.center h1 {
-margin-bottom: 10px;
-}
 
 /* header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
-}
+
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
 
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $gray-light;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
 
 /* footer */
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
-}
 
 /* sidebar */
 
-aside {
-  section.user_info {
-    margin-top: 20px;
-  }
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
-  }
-}
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
-}
 
 /* forms */
 
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
 
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
-}
 
-.checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
-}
-
-#session_remember_me {
-  width: auto;
-  margin-left: 0;
-}
 
 input[type="email"] {
   width: 300px;
@@ -197,98 +67,3 @@ input[type="password"] {
 
 /* Users index */
 
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
-}
-
-.tab_area {
-  font-size: 20px;
-  margin: 0px;
-}
-
-.tab_area label {
-  width: 150px;
-  margin: 0 50px;
-  display: inline-block;
-  padding: 14px 0 12px;
-  color: #999;
-  background: #ddd;
-  text-align: center;
-  font-size: 15px;
-  cursor: pointer;
-  transition: ease 0.2s opacity;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  vertical-align: bottom;
-  transition: ease 0.2s;
-  margin: 20px 5px 0;
-}
-
-.tab_area label:hover {
-  opacity: 0.5;
-}
-
-.tab_panel {
-  width: 100%;
-  padding: 80px ;
-  opacity: 0;
-  display: none;
-}
-
-.tab_panel p {
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-.panel_area {
-  background: #fff;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-top: 8px solid #a6cadb;
-}
-
-#tab1:checked ~ .tab_area .tab1_label {
-  background: #fff;
-  color: #000;
-}
-
-#tab1:checked ~ .panel_area #panel1 {
-  display:block;
-}
-
-#tab2:checked ~ .tab_area .tab2_label {
-  background: #fff;
-  color: #000;
-}
-
-#tab2:checked ~ .panel_area #panel2 {
-  display: block;
-}
-
-#tab3:checked ~ .tab_area .tab3_label {
-  background: #fff;
-  color: #000;
-}
-
-#tab3:checked ~ .panel_area #panel3 {
-  display:block;
-}
-
-/* Items index */
-
-.items {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
-}
