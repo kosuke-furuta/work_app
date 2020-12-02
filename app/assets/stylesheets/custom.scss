@@ -3,6 +3,8 @@
 
 /* mixins, variables, etc. */
 
+$gray-medium-light: #eaeaea;
+
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -19,33 +21,106 @@
   @include box_sizing;
 }
 
-/* home.html.erb */
+/* universal */
 
-h2 {
-  font-size: 4em;
-  text-align: center;
-  margin-bottom: 20px;
-  line-height: 2em;
+body {
+  padding-top: 80px;
 }
 
-p{
-  font-size: 1em;
-  text-align: center;
-  line-height: 2em;
-  font-weight: normal;
+section {
+  overflow: auto;
 }
 
+textarea {
+  resize: vertical;
+}
 
-/* header */
-
-
+.center {
+  text-align: center;
+  h1 {
+  margin-bottom: 10px;
+  }
+}
 
 /* typography */
 
+h1, h2, h3, h4, h5, h6 {
+  line-height: 2;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 0.5em;
+  margin-bottom: 20px;
+  line-height: 1em;
+  color: $gray-light;
+}
+
+.btn {
+  margin-bottom: 20px;
+}
+
+a {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  line-height: 1em;
+  color: $gray-light;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.9em;
+  color: $gray-light;
+  text-transform: capitalize;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+  color: #222;
+  text-decoration: none;
+  }
+}
+
+header a {
+  font-size: 1.1em;
+}
 
 
 /* footer */
 
+footer {
+  margin-top: 45px;
+  padding-top:5px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+  ul {
+    float: right;
+    list-style: none;
+    li {
+    float: left;
+    margin-left: 15px;
+    font-size: 0.8em;
+    }
+  }
+}
 
 /* sidebar */
 
