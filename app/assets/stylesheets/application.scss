@@ -1,0 +1,70 @@
+@import '~bootstrap/scss/bootstrap';
+
+/* universal */
+
+body {
+  padding-top: 20px;
+}
+
+h1, h2, h3 {
+  line-height: 1em; /* 行間の高さ */
+}
+
+h1 {
+  font-size: 3.5em;
+  letter-spacing: -2px; /* 行間 */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.3em;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  letter-spacing: -1px;
+  line-height: 1em; 
+  margin-bottom: 20px;
+}
+
+a {
+  text-align: center;
+  letter-spacing: -1px;
+  line-height: 1em; 
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  padding: 20px;
+  padding-top: 20px;
+  font-size: 1.9em;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.header-list li {
+  list-style: none;
+  float: left;
+  padding: 5px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* footer */
+
+.footer-list li {
+  list-style: none;
+  float: right;
+}
