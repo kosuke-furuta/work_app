@@ -1,8 +1,8 @@
-<header class="navbar navbar-fixed-top navbar-default"> 
+<header class="navbar navbar-fixed-top navbar-dark bg-dark"> 
   <div class="container">
     <%= link_to "Process Management", root_path, id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-expand-lg navbar-right">
         <li><%= link_to "ホーム", root_path %></li>
         <li><%= link_to "ヘルプ", help_path %></li>
         <% if logged_in? %>
