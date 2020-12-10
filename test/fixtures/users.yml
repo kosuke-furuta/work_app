@@ -1,9 +1,0 @@
-kosuke:
-  name: kosuke furuta
-  email: furu.21.22@gmail.com
-  password_digest: <%= User.digest('furu2122') %>
-
-  tarou:
-  name: tarou yamada
-  email: yamada@example.com
-  password_digest: <%= User.digest('password') %>
