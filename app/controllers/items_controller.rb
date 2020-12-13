@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def show
-    @item = Item.find(params[:id])
+    @item = item.find(params[:id])
   end
   
   def new
@@ -9,33 +9,44 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    @item.save!
-    flash[:success] = "「#{@item.productname}」を登録しました。"
-    redirect_to items_url
+    @item = items.new(item_params)
+    if @item.save
+      flash[:success] = "「#{@item.productname}」を登録しました。"
+      # redirect_to items_url
+      redirect_to @item
+    else
+      render 'item/new'
+    end
   end
 
   def index
-    @items = Item.paginate(page: params[:page])
+    @items = current_user.items.paginate(page: params[:page])
   end
   
   def edit
     @item = Item.find(params[:id])
+    # @item = current_user.items.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     @item.update!(item_params)
     flash[:success] = "「#{@item.productname}」を編集しました。"
     redirect_to items_url
   end
 
   def destroy
-    Item.find(params[:id]).destroy
+    @item = Item.find(params[:id])
+    item.destroy
     flash[:success] = "「#{@item}」を削除しました。"
     redirect_to items_url
   end
 
+    # item = Item.find(params[:id])
+    # if item.item_id == current_user.id
+    # item.destroy
+    # end
+    # Item.current_user.items.find(params[:id]).destroy
+    
   private
 
     def item_params

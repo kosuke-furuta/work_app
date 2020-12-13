@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+     @user.save
       # 保存の成功をここで扱う
       log_in @user
       flash[:success] = "登録が完了！"
